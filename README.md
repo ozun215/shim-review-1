@@ -23,12 +23,14 @@ Here's the template:
 Gooroom Platform Forum (www.gooroom.kr).
 Korean companies such as Eclectic, Hangul and Computer, AhnLab, and TmaxOS are participating in the Cloud Platform Forum.
 
+
 -------------------------------------------------------------------------------
 ### What product or service is this for?
 -------------------------------------------------------------------------------
 Gooroom OS.
 Gooroom OS is a Davian-based Linux distribution that utilizes open source to develop and enhance security to prepare for the transition to the cloud.
 Gooroom OS is a security OS developed by the Cloud Platform Forum.
+
 
 -------------------------------------------------------------------------------
 ### What's the justification that this really does need to be signed for the whole world to be able to boot it?
@@ -39,13 +41,12 @@ Gooroom OS currently supports Secure Boot
 By the way, there was no SHIM signed by MS, Secure Boot was only available on PC that could register custom keys in UEFI.
 Using SHIM signed by MS, Gooroom OS requests signatures for use by users worldwide.
 
+
 -------------------------------------------------------------------------------
 ### Who is the primary contact for security updates, etc.?
 The security contacts need to be verified before the shim can be accepted. For subsequent requests, contact verification is only necessary if the security contacts or their PGP keys have changed since the last successful verification.
-
 An authorized reviewer will initiate contact verification by sending each security contact a PGP-encrypted email containing random words.
 You will be asked to post the contents of these mails in your `shim-review` issue to prove ownership of the email addresses and PGP keys.
-
 -------------------------------------------------------------------------------
 - Name:JongKyung Woo
 - Position:Gooroom Director
@@ -55,6 +56,7 @@ You will be asked to post the contents of these mails in your `shim-review` issu
 (Key should be signed by the other security contacts, pushed to a keyserver
 like keyserver.ubuntu.com, and preferably have signatures that are reasonably
 well known in the Linux community.)
+
 
 -------------------------------------------------------------------------------
 ### Who is the secondary contact for security updates, etc.?
@@ -68,6 +70,7 @@ well known in the Linux community.)
 like keyserver.ubuntu.com, and preferably have signatures that are reasonably
 well known in the Linux community.)
 
+
 -------------------------------------------------------------------------------
 ### Were these binaries created from the 15.6 shim release tar?
 Please create your shim binaries starting with the 15.6 shim release tar file: https://github.com/rhboot/shim/releases/download/15.6/shim-15.6.tar.bz2
@@ -77,21 +80,25 @@ This matches https://github.com/rhboot/shim/releases/tag/15.6 and contains the a
 -------------------------------------------------------------------------------
 Yes, we are using the source from https://github.com/rhboot/shim/releases/download/15.6/shim-15.6.tar.bz2
 
+
 -------------------------------------------------------------------------------
 ### URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
 https://github.com/ozun215/shim-review/tree/gooroom-shim-amd64-20220819
+
 
 -------------------------------------------------------------------------------
 ### What patches are being applied and why:
 -------------------------------------------------------------------------------
 No patch applied
 
+
 -------------------------------------------------------------------------------
 ### If shim is loading GRUB2 bootloader what exact implementation of Secureboot in GRUB2 do you have? (Either Upstream GRUB2 shim_lock verifier or Downstream RHEL/Fedora/Debian/Canonical-like implementation)
 -------------------------------------------------------------------------------
 We have our own downstream implementation. 
 We are also following on debian's patches and reflect these patches immediately
+
 
 -------------------------------------------------------------------------------
 ### If shim is loading GRUB2 bootloader and your previously released shim booted a version of grub affected by any of the CVEs in the July 2020 grub2 CVE list, the March 2021 grub2 CVE list, or the June 7th 2022 grub2 CVE list:
@@ -119,7 +126,10 @@ We are also following on debian's patches and reflect these patches immediately
 * CVE-2022-28736
 * CVE-2022-28737
 -------------------------------------------------------------------------------
-Same as "Debian 11"'s work
+
+We are following on "Debian 11"
+
+-- See below of Debian 11's
 
 CVE-2020-14372
 CVE-2020-25632
@@ -201,7 +211,9 @@ For the June 2022 CVE list, older versions of GRUB2 are still around in Debian r
 ### Is upstream commit [eadb2f47a3ced5c64b23b90fd2a3463f63726066 "lockdown: also lock down previous kgdb use"](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=eadb2f47a3ced5c64b23b90fd2a3463f63726066) applied?
 
 -------------------------------------------------------------------------------
-Same as "Debian 11"'s work
+We are following on "Debian 11"
+
+-- See below of Debian 11's
 
 It is applied the first two fixes during the boothole event and they are still there in all debian's signed kernels.
 
@@ -230,6 +242,7 @@ Debian 11
 
 Dockerfile is provided to reproduce this build
 
+
 -------------------------------------------------------------------------------
 ### Which files in this repo are the logs for your build?
 This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
@@ -237,10 +250,12 @@ This should include logs for creating the buildroots, applying patches, doing th
 
 https://github.com/ozun215/shim-review/blob/gooroom-shim-amd64-20220824/build.log
 
+
 -------------------------------------------------------------------------------
 ### What changes were made since your SHIM was last signed?
 -------------------------------------------------------------------------------
 No changes
+
 
 -------------------------------------------------------------------------------
 ### What is the SHA256 hash of your final SHIM binary?
@@ -248,15 +263,18 @@ No changes
 
 cfa3cf6ac47e7714622a3f2bbedd00d12b455593e583edb27752becbedb1a55b  shimx64.efi
 
+
 -------------------------------------------------------------------------------
 ### How do you manage and protect the keys used in your SHIM?
 -------------------------------------------------------------------------------
 The keys are kept in USB HSM.
 
+
 -------------------------------------------------------------------------------
 ### Do you use EV certificates as embedded certificates in the SHIM?
 -------------------------------------------------------------------------------
 No
+
 
 -------------------------------------------------------------------------------
 ### Do you add a vendor-specific SBAT entry to the SBAT section in each binary that supports SBAT metadata ( grub2, fwupd, fwupdate, shim + all child shim binaries )?
@@ -268,29 +286,29 @@ grub,1,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/
 grub.debian,1,Debian,grub2,2.06-3,https://tracker.debian.org/pkg/grub2
 grub.gooroom,1,Gooroom Platform Forum,gooroom-grub,2.06-3+grm3u1,https://github.com/gooroom/gooroom-grub
 
-sbat,1,UEFI shim,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
-fwupd,1,Firmware update daemon,fwupd,1.5.7,https://github.com/fwupd/fwupd
-fwupd.debian,1,Debian,fwupd,1.5.7-4,https://tracker.debian.org/pkg/fwupd
-fwupd.gooroom,1,Gooroom Platform Forum,fwupd,1.5.7-4,https://github.com/gooroom/fwupd
-
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
 shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim
 shim.gooroom,1,Gooroom Platform Forum,shim,15.6,https://github.com/gooroom/shim
+
+
 
 -------------------------------------------------------------------------------
 ### Which modules are built into your signed grub image?
 -------------------------------------------------------------------------------
 boot part_gpt part_msdos fat ext2 normal configfile lspci ls reboot datetime time loadenv search lvm help gfxmenu gfxterm gfxterm_menu gfxterm_background all_video png gettext linuxefi tpm verify gcry_rsa test echo zfs xfs ufs2 ufs1_be ufs1 udf squash4 sfs romfs reiserfs odc ntfs nilfs2 newc minix_be minix3_be minix3 minix2_be minix2 minix jfs iso9660 hfsplus hfs exfat cpio_be cpio cbfs bfs afs affs crypto gcry_sha256 gcry_sha512
 
+
 -------------------------------------------------------------------------------
 ### What is the origin and full version number of your bootloader (GRUB or other)?
 -------------------------------------------------------------------------------
 https://salsa.debian.org/grub-team/grub.git, branch "bullseye" is the current version (2.06-3~deb11u1) for Debian Bullseye. It is derived from the upstream 2.06 release with a number of patches applied - see debian/patches there.
 
+
 -------------------------------------------------------------------------------
 ### If your SHIM launches any other components, please provide further details on what is launched.
 -------------------------------------------------------------------------------
-It will load fwupd as already mentioned above.
+N/A
+
 
 -------------------------------------------------------------------------------
 ### If your GRUB2 launches any other binaries that are not the Linux kernel in SecureBoot mode, please provide further details on what is launched and how it enforces Secureboot lockdown.
@@ -300,9 +318,14 @@ None - it will only load a signed, Secureboot Linux
 -------------------------------------------------------------------------------
 ### How do the launched components prevent execution of unauthenticated code?
 -------------------------------------------------------------------------------
+We are following on "Debian 11"
+
+-- See below of Debian 11's
+
 Debian's signed Linux packages have a common set of lockdown patches.
 Debian's signed grub2 packages include common secure boot patches so they will only load appropriately signed binaries.
-Debian's signed fwupd packages will not execute other binaries
+
+
 
 -------------------------------------------------------------------------------
 ### Does your SHIM load any loaders that support loading unsigned kernels (e.g. GRUB)?
