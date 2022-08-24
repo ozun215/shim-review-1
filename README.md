@@ -84,7 +84,7 @@ Yes, we are using the source from https://github.com/rhboot/shim/releases/downlo
 -------------------------------------------------------------------------------
 ### URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
-https://github.com/ozun215/shim-review/tree/gooroom-shim-amd64-20220819
+https://github.com/ozun215/shim-review-1/tree/gooroom-shim-amd64-20220824
 
 
 -------------------------------------------------------------------------------
