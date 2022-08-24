@@ -163,6 +163,7 @@ CVE-2022-28737
 This was fixed in shim 15.6, so we have this fix too.
 
 
+
 -------------------------------------------------------------------------------
 ### Were old shims hashes provided to Microsoft for verification and to be added to future DBX updates?
 ### Does your new chain of trust disallow booting old GRUB2 builds affected by the CVEs?
@@ -206,17 +207,20 @@ It is applied the first two fixes during the boothole event and they are still t
 
 The kgdb fix is included in debian's current kernel sources, but debian don't enable kgdb anyway in debian's binary build.
 
+
 -------------------------------------------------------------------------------
 ### If you use vendor_db functionality of providing multiple certificates and/or hashes please briefly describe your certificate setup.
 ### If there are allow-listed hashes please provide exact binaries for which hashes are created via file sharing service, available in public with anonymous access for verification.
 -------------------------------------------------------------------------------
 We don't use vendor_db.
 
+
 -------------------------------------------------------------------------------
 ### If you are re-using a previously used (CA) certificate, you will need to add the hashes of the previous GRUB2 binaries exposed to the CVEs to vendor_dbx in shim in order to prevent GRUB2 from being able to chainload those older GRUB2 binaries. If you are changing to a new (CA) certificate, this does not apply.
 ### Please describe your strategy.
 -------------------------------------------------------------------------------
 Older grub won't be able to boot due to the increase of global generation number in SBAT
+
 
 -------------------------------------------------------------------------------
 ### What OS and toolchain must we use to reproduce this build?  Include where to find it, etc.  We're going to try to reproduce your build as closely as possible to verify that it's really a build of the source tree you tell us it is, so these need to be fairly thorough. At the very least include the specific versions of gcc, binutils, and gnu-efi which were used, and where to find those binaries.
@@ -231,7 +235,7 @@ Dockerfile is provided to reproduce this build
 This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 -------------------------------------------------------------------------------
 
-https://github.com/ozun215/shim-review/blob/gooroom-shim-amd64-20220819/build.log
+https://github.com/ozun215/shim-review/blob/gooroom-shim-amd64-20220824/build.log
 
 -------------------------------------------------------------------------------
 ### What changes were made since your SHIM was last signed?
@@ -247,7 +251,7 @@ cfa3cf6ac47e7714622a3f2bbedd00d12b455593e583edb27752becbedb1a55b  shimx64.efi
 -------------------------------------------------------------------------------
 ### How do you manage and protect the keys used in your SHIM?
 -------------------------------------------------------------------------------
-The keys are kept in USB HSM and the HSM also kept in security deposit box.
+The keys are kept in USB HSM.
 
 -------------------------------------------------------------------------------
 ### Do you use EV certificates as embedded certificates in the SHIM?
@@ -260,16 +264,18 @@ No
 ### Where your code is only slightly modified from an upstream vendor's, please also preserve their SBAT entries to simplify revocation.
 -------------------------------------------------------------------------------
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
-grub,2,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/
-grub.gooroom,1,Gooroom Platform Forum,grub2,2.06-3,gooroom@gooroom.kr
+grub,1,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/
+grub.debian,1,Debian,grub2,2.06-3,https://tracker.debian.org/pkg/grub2
+grub.gooroom,1,Gooroom Platform Forum,gooroom-grub,2.06-3+grm3u1,https://github.com/gooroom/gooroom-grub
 
 sbat,1,UEFI shim,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
 fwupd,1,Firmware update daemon,fwupd,1.5.7,https://github.com/fwupd/fwupd
-fwupd.gooroom,1,Gooroom Platform Forum,fwupd,1.5.7-4,gooroom@gooroom.kr
+fwupd.debian,1,Debian,fwupd,1.5.7-4,https://tracker.debian.org/pkg/fwupd
+fwupd.gooroom,1,Gooroom Platform Forum,fwupd,1.5.7-4,https://github.com/gooroom/fwupd
 
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
 shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim
-shim.gooroom,1,Gooroom Platform Forum,shim,15.6,gooroom@gooroom.kr
+shim.gooroom,1,Gooroom Platform Forum,shim,15.6,https://github.com/gooroom/shim
 
 -------------------------------------------------------------------------------
 ### Which modules are built into your signed grub image?
@@ -280,6 +286,7 @@ boot part_gpt part_msdos fat ext2 normal configfile lspci ls reboot datetime tim
 ### What is the origin and full version number of your bootloader (GRUB or other)?
 -------------------------------------------------------------------------------
 https://salsa.debian.org/grub-team/grub.git, branch "bullseye" is the current version (2.06-3~deb11u1) for Debian Bullseye. It is derived from the upstream 2.06 release with a number of patches applied - see debian/patches there.
+
 -------------------------------------------------------------------------------
 ### If your SHIM launches any other components, please provide further details on what is launched.
 -------------------------------------------------------------------------------
