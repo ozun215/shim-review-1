@@ -248,7 +248,7 @@ Dockerfile is provided to reproduce this build
 This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 -------------------------------------------------------------------------------
 
-https://github.com/ozun215/shim-review/blob/gooroom-shim-amd64-20220824/build.log
+https://github.com/ozun215/shim-review-1/tree/gooroom-shim-amd64-20220824/build.log
 
 
 -------------------------------------------------------------------------------
