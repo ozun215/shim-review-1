@@ -21,7 +21,7 @@ Here's the template:
 ### What organization or people are asking to have this signed?
 -------------------------------------------------------------------------------
 Gooroom Platform Forum (www.gooroom.kr).
-Korean companies such as Eclectic, Hangul and Computer, AhnLab, and TmaxOS are participating in the Cloud Platform Forum.
+Korean companies such as eActive(www.eactive.co.kr), HANCOM Inc.(www.hancom.com), AhnLab Inc.(www.ahnlab.com), and TmaxOS(kr.tmaxsoft.com) are participating in the Cloud Platform Forum.
 
 
 -------------------------------------------------------------------------------
@@ -295,8 +295,8 @@ shim.gooroom,1,Gooroom Platform Forum,shim,15.6,https://github.com/gooroom/shim
 -------------------------------------------------------------------------------
 ### Which modules are built into your signed grub image?
 -------------------------------------------------------------------------------
-boot part_gpt part_msdos fat ext2 normal configfile lspci ls reboot datetime time loadenv search lvm help gfxmenu gfxterm gfxterm_menu gfxterm_background all_video png gettext linuxefi tpm verify gcry_rsa test echo zfs xfs ufs2 ufs1_be ufs1 udf squash4 sfs romfs reiserfs odc ntfs nilfs2 newc minix_be minix3_be minix3 minix2_be minix2 minix jfs iso9660 hfsplus hfs exfat cpio_be cpio cbfs bfs afs affs crypto gcry_sha256 gcry_sha512
 
+boot part_gpt part_msdos fat ext2 normal configfile lspci ls reboot datetime time loadenv search help gfxmenu gfxterm gfxterm_menu gfxterm_background all_video png gettext linuxefi gcry_rsa test echo squash4 iso9660 exfat cpio_be cpio crypto gcry_sha256 gcry_sha512 tpm
 
 -------------------------------------------------------------------------------
 ### What is the origin and full version number of your bootloader (GRUB or other)?
