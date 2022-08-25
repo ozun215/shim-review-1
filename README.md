@@ -21,15 +21,20 @@ Here's the template:
 ### What organization or people are asking to have this signed?
 -------------------------------------------------------------------------------
 Gooroom Platform Forum (www.gooroom.kr).
-Korean companies such as eActive(www.eactive.co.kr), HANCOM Inc.(www.hancom.com), AhnLab Inc.(www.ahnlab.com), and TmaxOS(kr.tmaxsoft.com) are participating in the Cloud Platform Forum.
+
+Gooroom platforms are being developed in consideration of cloud-web-based work environments that perform all tasks on a secure browser. Cloud-Web-based work environments store all data in cloud storage and work by utilizing the web-based application services provided by the cloud instead of the applications that were previously installed and running on user terminals.
+
+Gooroom platform consists of Gooroom OS, Gooroom browser, Gooroom security technology, and Gooroom central management System
+
+Korean companies such as eActive(www.eactive.co.kr), HANCOM Inc.(www.hancom.com), AhnLab Inc.(www.ahnlab.com), and TmaxOS(kr.tmaxsoft.com) are participating in the Gooroom Platform Forum.
 
 
 -------------------------------------------------------------------------------
 ### What product or service is this for?
 -------------------------------------------------------------------------------
 Gooroom OS.
-Gooroom OS is a Davian-based Linux distribution that utilizes open source to develop and enhance security to prepare for the transition to the cloud.
-Gooroom OS is a security OS developed by the Cloud Platform Forum.
+Gooroom OS is a Debian-based Linux distribution that utilizes open source to develop and enhance security to prepare for the transition to the cloud.
+Gooroom OS is a security OS developed by the Gooroom Platform Forum.
 
 
 -------------------------------------------------------------------------------
@@ -84,7 +89,7 @@ Yes, we are using the source from https://github.com/rhboot/shim/releases/downlo
 -------------------------------------------------------------------------------
 ### URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
-https://github.com/ozun215/shim-review-1/tree/gooroom-shim-amd64-20220824-4
+https://github.com/ozun215/shim-review-1/tree/gooroom-shim-amd64-20220825
 
 
 -------------------------------------------------------------------------------
@@ -248,7 +253,7 @@ Dockerfile is provided to reproduce this build
 This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 -------------------------------------------------------------------------------
 
-https://github.com/ozun215/shim-review-1/tree/gooroom-shim-amd64-20220824-4/build.log
+https://github.com/ozun215/shim-review-1/tree/gooroom-shim-amd64-20220825/build.log
 
 
 -------------------------------------------------------------------------------
@@ -267,7 +272,7 @@ cfa3cf6ac47e7714622a3f2bbedd00d12b455593e583edb27752becbedb1a55b  shimx64.efi
 -------------------------------------------------------------------------------
 ### How do you manage and protect the keys used in your SHIM?
 -------------------------------------------------------------------------------
-The keys are kept in USB HSM.
+The keys are kept in USB HSM and It's being kept in a safe.
 
 
 -------------------------------------------------------------------------------
