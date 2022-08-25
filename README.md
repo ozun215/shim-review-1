@@ -26,7 +26,7 @@ Gooroom platforms are being developed in consideration of cloud-web-based work e
 
 Gooroom platform consists of Gooroom OS, Gooroom browser, Gooroom security technology, and Gooroom central management System
 
-Korean companies such as eActive(www.eactive.co.kr), HANCOM Inc.(www.hancom.com), AhnLab Inc.(www.ahnlab.com), and TmaxOS(kr.tmaxsoft.com) are participating in the Gooroom Platform Forum.
+Korean companies such as HANCOM Inc.(www.hancom.com), AhnLab Inc.(www.ahnlab.com), and TmaxOS(kr.tmaxsoft.com), eActive(www.eactive.co.kr) are participating in the Gooroom Platform Forum.
 
 
 -------------------------------------------------------------------------------
@@ -289,13 +289,15 @@ No
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
 grub,1,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/
 grub.debian,1,Debian,grub2,2.06-3,https://tracker.debian.org/pkg/grub2
-grub.gooroom,1,Gooroom Platform Forum,gooroom-grub,2.06-3+grm3u1,https://github.com/gooroom/gooroom-grub
+grub.gooroom,1,Gooroom,gooroom-grub,2.06-3+grm3u1,https://github.com/gooroom/gooroom-grub
 
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
 shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim
-shim.gooroom,1,Gooroom Platform Forum,shim,15.6,https://github.com/gooroom/shim
+shim.gooroom,1,Gooroom,shim,15.6,https://github.com/gooroom/shim
 
-
+sbat,1,UEFI shim,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
+fwupd,1,Firmware update daemon,fwupd,1.5.7,https://github.com/fwupd/fwupd
+fwupd.gooroom,1,Gooroom,fwupd,1.5.7-4,gooroom@gooroom.kr
 
 -------------------------------------------------------------------------------
 ### Which modules are built into your signed grub image?
@@ -306,7 +308,8 @@ boot part_gpt part_msdos fat ext2 normal configfile lspci ls reboot datetime tim
 -------------------------------------------------------------------------------
 ### What is the origin and full version number of your bootloader (GRUB or other)?
 -------------------------------------------------------------------------------
-https://salsa.debian.org/grub-team/grub.git, branch "bullseye" is the current version (2.06-3~deb11u1) for Debian Bullseye. It is derived from the upstream 2.06 release with a number of patches applied - see debian/patches there.
+https://github.com/gooroom/gooroom-grub, It is derived from the Debian Bullseye upstream 2.06 release with a number of patches applied - see debian/patches there.
+
 
 
 -------------------------------------------------------------------------------
