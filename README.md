@@ -251,7 +251,7 @@ https://github.com/gooroom/gooroom-grub, It is derived from the Debian Bullseye 
 -------------------------------------------------------------------------------
 ### If your SHIM launches any other components, please provide further details on what is launched.
 -------------------------------------------------------------------------------
-N/A
+It will load fwupd
 
 
 -------------------------------------------------------------------------------
