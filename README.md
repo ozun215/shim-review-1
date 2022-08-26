@@ -22,7 +22,7 @@ Here's the template:
 -------------------------------------------------------------------------------
 Gooroom Platform Forum (www.gooroom.kr).
 
-Gooroom platforms are being developed in consideration of cloud-web-based work environments that perform all tasks on a secure browser. Cloud-Web-based work environments store all data in cloud storage and work by utilizing the web-based application services provided by the cloud instead of the applications that were previously installed and running on user terminals.
+Gooroom platforms are being developed in consideration of cloud-web-based work environments that perform all tasks on a secure browser. Cloud-web-based work environments store all data in cloud storage and work by utilizing the web-based application services provided by the cloud instead of the applications that were previously installed and running on user terminals.
 
 Gooroom platform consists of Gooroom OS, Gooroom browser, Gooroom security technology, and Gooroom central management System
 
@@ -33,18 +33,18 @@ Korean companies such as HANCOM Inc.(www.hancom.com), AhnLab Inc.(www.ahnlab.com
 ### What product or service is this for?
 -------------------------------------------------------------------------------
 Gooroom OS.
-Gooroom OS is a Debian-based Linux distribution that utilizes open source to develop and enhance security to prepare for the transition to the cloud.
-Gooroom OS is a security OS developed by the Gooroom Platform Forum.
+Gooroom OS. Gooroom OS is a Debian-based Linux distribution, and like other open source OSes, anyone can use the source code and binaries for free.
+Gooroom OS is a secure OS that provides sufficient support for multilevel security. It was created to prepare for the transition to the cloud.
 
 
 -------------------------------------------------------------------------------
 ### What's the justification that this really does need to be signed for the whole world to be able to boot it?
 -------------------------------------------------------------------------------
-Gooroom OS is aimed at open-source OS that anyone can use freely, such as Debian, Ubuntu, and Fedora.
+Gooroom OS is an open source OS that anyone can use freely, such as Debian, Ubuntu, and Fedora.
 Gooroom OS has been developed and released up to version 3.0.
 Gooroom OS currently supports Secure Boot
-By the way, there was no SHIM signed by MS, Secure Boot was only available on PC that could register custom keys in UEFI.
-Using SHIM signed by MS, Gooroom OS requests signatures for use by users worldwide.
+But, there is no SHIM signed by MS, Secure Boot is only available on PC that could register custom keys in UEFI.
+If we get a shim signed by Microsoft, users around the world will be able to use Gooroom OS more easily and safely.
 
 
 -------------------------------------------------------------------------------
@@ -132,50 +132,7 @@ We are also following on debian's patches and reflect these patches immediately
 * CVE-2022-28737
 -------------------------------------------------------------------------------
 
-We are following on "Debian 11"
-
--- See below of Debian 11's
-
-CVE-2020-14372
-CVE-2020-25632
-CVE-2020-25647
-CVE-2020-27749
-CVE-2020-27779
-CVE-2021-20225
-CVE-2021-20233
-CVE-2020-10713
-CVE-2020-14308
-CVE-2020-14309
-CVE-2020-14310
-CVE-2020-14311
-CVE-2020-15705
-CVE-2021-3418 (if you are shipping the shim_lock module)
-We include patches for all of: CVE-2020-14372, CVE-2020-25632, CVE-2020-25647, CVE-2020-27749, CVE-2020-27779, CVE-2021-20225, CVE-2021-20233, CVE-2020-10713, CVE-2020-14308, CVE-2020-14309, CVE-2020-14310, CVE-2020-14311
-
-For the other two CVEs listed here:
-
-CVE-2020-15705 does not affect our codebase due to other patches (as explained back in the boothole days).
-
-We haven't used the shim_lock module, so CVE-2021-3418 does not apply to us.
-
-CVE-2021-3695
-
-CVE-2021-3696
-
-CVE-2021-3697
-
-CVE-2022-28733
-
-CVE-2022-28734
-
-CVE-2022-28735
-
-CVE-2022-28736
-
-We have patches included for all of these in our GRUB2 packages based on version 2.06. Older versions of GRUB2 are still around in Debian repos, but will be revoked via SBAT updates.
-
-CVE-2022-28737
-This was fixed in shim 15.6, so we have this fix too.
+We haven't used shim so far, so there is no such thing. Our gooroom-grub was developed based on GRUB2 2.06 where existing CVEs were resolved.
 
 
 
@@ -183,30 +140,9 @@ This was fixed in shim 15.6, so we have this fix too.
 ### Were old shims hashes provided to Microsoft for verification and to be added to future DBX updates?
 ### Does your new chain of trust disallow booting old GRUB2 builds affected by the CVEs?
 -------------------------------------------------------------------------------
-We are following on "Debian 11"
 
--- See below of Debian 11's
-
-For the July 2020 boothole issues, we provided Microsoft with the details of our intermediate signing cert and that was included in the DBX update at the time. ("Debian Secure Boot Signer": fingerprint f156d24f5d4e775da0e6a9111f074cfce701939d688c64dba093f97753434f2c). We moved to a new cert ("Debian Secure Boot Signer 2020": fingerprint 3a91a54f9f46a720fe5bbd2390538ba557da0c2ed5286f5351fe04fff254ec31).
-
-For the March 2021 issues, we again revoked our signer cert ("Debian Secure Boot Signer 2020": fingerprint 3a91a54f9f46a720fe5bbd2390538ba557da0c2ed5286f5351fe04fff254ec31) and switched to new per-project certs for each of the things we sign ourselves:
-
-Debian Secure Boot Signer 2021 - fwupd
-(fingerprint 309cf4b37d11af9dbf988b17dfa856443118a41395d094fa7acfe37bcd690e33)
-Debian Secure Boot Signer 2021 - fwupdate
-(fingerprint e3bd875aaac396020a1eb2a7e6e185dd4868fdf7e5d69b974215bd24cab04b5d)
-Debian Secure Boot Signer 2021 - grub2
-(fingerprint 0ec31f19134e46a4ef928bd5f0c60ee52f6f817011b5880cb6c8ac953c23510c)
-Debian Secure Boot Signer 2021 - linux
-(fingerprint 88ce3137175e3840b74356a8c3cae4bdd4af1b557a7367f6704ed8c2bd1fbf1d)
-Debian Secure Boot Signer 2021 - shim
-(fingerprint 40eced276ab0a64fc369db1900bd15536a1fb7d6cc0969a0ea7c7594bb0b85e2)
-In addition to those changes, we provided Microsoft with details of all the shim binaries they have ever signed for us, so they can be revoked to enforce switching to binaries including SBAT in the future.
-
-Also, the shim binary here includes a vendor DBX list that blocks all of those older vulnerable grub binaries that we ever signed for this architecture.
-
-For the June 2022 CVE list, older versions of GRUB2 are still around in Debian repos, but will be revoked via SBAT updates.
-
+1. We haven't used shim so far, so there is no such thing.
+2. In our new chain of trust, we will not use old GRUB2 affected by CVE, but use our groroom-grub based on GRUB2 2.06.
 
 
 -------------------------------------------------------------------------------
@@ -236,14 +172,13 @@ We don't use vendor_db.
 ### If you are re-using a previously used (CA) certificate, you will need to add the hashes of the previous GRUB2 binaries exposed to the CVEs to vendor_dbx in shim in order to prevent GRUB2 from being able to chainload those older GRUB2 binaries. If you are changing to a new (CA) certificate, this does not apply.
 ### Please describe your strategy.
 -------------------------------------------------------------------------------
-Older grub won't be able to boot due to the increase of global generation number in SBAT
+We have created the first CA to be used for SHIM, which is signed by MS, so there is no such thing.
 
 
 -------------------------------------------------------------------------------
 ### What OS and toolchain must we use to reproduce this build?  Include where to find it, etc.  We're going to try to reproduce your build as closely as possible to verify that it's really a build of the source tree you tell us it is, so these need to be fairly thorough. At the very least include the specific versions of gcc, binutils, and gnu-efi which were used, and where to find those binaries.
 ### If the shim binaries can't be reproduced using the provided Dockerfile, please explain why that's the case and what the differences would be.
 -------------------------------------------------------------------------------
-Debian 11
 
 Dockerfile is provided to reproduce this build
 
@@ -260,6 +195,7 @@ https://github.com/ozun215/shim-review-1/tree/gooroom-shim-amd64-20220825/build.
 ### What changes were made since your SHIM was last signed?
 -------------------------------------------------------------------------------
 No changes
+This is our first shim to receive the signature from MS.
 
 
 -------------------------------------------------------------------------------
