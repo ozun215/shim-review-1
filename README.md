@@ -142,7 +142,7 @@ We haven't used shim so far, so there is no such thing. Our gooroom-grub was dev
 -------------------------------------------------------------------------------
 
 1. We haven't used shim so far, so there is no such thing.
-2. In our new chain of trust, we will not use old GRUB2 affected by CVE, but use our groroom-grub based on GRUB2 2.06.
+2. In our new chain of trust, we will not use old GRUB2 affected by CVEs, but use our groroom-grub based on GRUB2 2.06.
 
 
 -------------------------------------------------------------------------------
@@ -152,13 +152,13 @@ We haven't used shim so far, so there is no such thing. Our gooroom-grub was dev
 ### Is upstream commit [eadb2f47a3ced5c64b23b90fd2a3463f63726066 "lockdown: also lock down previous kgdb use"](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=eadb2f47a3ced5c64b23b90fd2a3463f63726066) applied?
 
 -------------------------------------------------------------------------------
-We are following on "Debian 11"
+We are following on "Debian 11"   
 
--- See below of Debian 11's
+-- See below of Debian 11's   
 
-It is applied the first two fixes during the boothole event and they are still there in all debian's signed kernels.
+It is applied the first two fixes during the boothole event and they are still there in all debian's signed kernels.   
 
-The kgdb fix is included in debian's current kernel sources, but debian don't enable kgdb anyway in debian's binary build.
+The kgdb fix is included in debian's current kernel sources, but debian don't enable kgdb anyway in debian's binary build.   
 
 
 -------------------------------------------------------------------------------
@@ -172,7 +172,7 @@ We don't use vendor_db.
 ### If you are re-using a previously used (CA) certificate, you will need to add the hashes of the previous GRUB2 binaries exposed to the CVEs to vendor_dbx in shim in order to prevent GRUB2 from being able to chainload those older GRUB2 binaries. If you are changing to a new (CA) certificate, this does not apply.
 ### Please describe your strategy.
 -------------------------------------------------------------------------------
-We have created the first CA to be used for SHIM, which is signed by MS, so there is no such thing.
+This is our first submission. We created the first (CA) certificate.
 
 
 -------------------------------------------------------------------------------
@@ -188,13 +188,13 @@ Dockerfile is provided to reproduce this build
 This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 -------------------------------------------------------------------------------
 
-https://github.com/ozun215/shim-review-1/tree/gooroom-shim-amd64-20220825/build.log
+https://github.com/ozun215/shim-review-1/tree/gooroom-shim-amd64-20220829/build.log
 
 
 -------------------------------------------------------------------------------
 ### What changes were made since your SHIM was last signed?
 -------------------------------------------------------------------------------
-No changes
+No changes.
 This is our first shim to receive the signature from MS.
 
 
@@ -208,7 +208,7 @@ cfa3cf6ac47e7714622a3f2bbedd00d12b455593e583edb27752becbedb1a55b  shimx64.efi
 -------------------------------------------------------------------------------
 ### How do you manage and protect the keys used in your SHIM?
 -------------------------------------------------------------------------------
-The keys are kept in USB HSM and It's being kept in a safe.
+The keys are kept in USB HSM that is under physical access control.    
 
 
 -------------------------------------------------------------------------------
@@ -222,20 +222,20 @@ No
 ### Please provide exact SBAT entries for all SBAT binaries you are booting or planning to boot directly through shim.
 ### Where your code is only slightly modified from an upstream vendor's, please also preserve their SBAT entries to simplify revocation.
 -------------------------------------------------------------------------------
-sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md 
-grub,1,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/ 
-grub.debian,1,Debian,grub2,2.06-3,https://tracker.debian.org/pkg/grub2 
-grub.gooroom,1,Gooroom,gooroom-grub,2.06-3+grm3u1,https://github.com/gooroom/gooroom-grub
+sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md   
+grub,1,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/    
+grub.debian,1,Debian,grub2,2.06-3,https://tracker.debian.org/pkg/grub2    
+grub.gooroom,1,Gooroom,gooroom-grub,2.06-3+grm3u1,https://github.com/gooroom/gooroom-grub   
 
 
-sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md 
-shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim 
-shim.gooroom,1,Gooroom,shim,15.6,https://github.com/gooroom/shim 
+sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md    
+shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim    
+shim.gooroom,1,Gooroom,shim,15.6,https://github.com/gooroom/shim    
 
 
-sbat,1,UEFI shim,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md 
-fwupd,1,Firmware update daemon,fwupd,1.5.7,https://github.com/fwupd/fwupd 
-fwupd.gooroom,1,Gooroom,fwupd,1.5.7-4,gooroom@gooroom.kr 
+sbat,1,UEFI shim,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md    
+fwupd,1,Firmware update daemon,fwupd,1.5.7,https://github.com/fwupd/fwupd     
+fwupd.gooroom,1,Gooroom,fwupd,1.5.7-4,gooroom@gooroom.kr    
 
 
 -------------------------------------------------------------------------------
@@ -254,13 +254,13 @@ https://github.com/gooroom/gooroom-grub, It is derived from the Debian Bullseye 
 -------------------------------------------------------------------------------
 ### If your SHIM launches any other components, please provide further details on what is launched.
 -------------------------------------------------------------------------------
-It will load fwupd
+It launches fwupd.
 
 
 -------------------------------------------------------------------------------
 ### If your GRUB2 launches any other binaries that are not the Linux kernel in SecureBoot mode, please provide further details on what is launched and how it enforces Secureboot lockdown.
 -------------------------------------------------------------------------------
-None - it will only load a signed, Secureboot Linux
+None - it only launches a signed kernel in SecureBoot mode.
 
 -------------------------------------------------------------------------------
 ### How do the launched components prevent execution of unauthenticated code?
@@ -269,9 +269,8 @@ We are following on "Debian 11"
 
 -- See below of Debian 11's
 
-Debian's signed Linux packages have a common set of lockdown patches.
-Debian's signed grub2 packages include common secure boot patches so they will only load appropriately signed binaries.
-
+Debian's signed Linux packages have a common set of lockdown patches.   
+Debian's signed grub2 packages include common secure boot patches so they will only load appropriately signed binaries.   
 
 
 -------------------------------------------------------------------------------
@@ -282,7 +281,7 @@ N/A
 -------------------------------------------------------------------------------
 ### What kernel are you using? Which patches does it includes to enforce Secure Boot?
 -------------------------------------------------------------------------------
-linux (5.10.120-1)
+Debian linux kernel(v5.10.120-1)   
 
 -------------------------------------------------------------------------------
 ### Add any additional information you think we may need to validate this shim.
