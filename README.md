@@ -26,7 +26,7 @@ Gooroom platforms are being developed in consideration of cloud-web-based work e
 
 Gooroom platform consists of Gooroom OS, Gooroom browser, Gooroom security technology, and Gooroom central management System
 
-Korean companies such as HANCOM Inc.(www.hancom.com), AhnLab Inc.(www.ahnlab.com), and TmaxOS(tmaxos.com), eActive(www.eactive.co.kr) are participating in the Gooroom Platform Forum.
+Korean companies such as HANCOM Inc.(www.hancom.com), AhnLab Inc.(www.ahnlab.com), and TmaxOS(www.tmax.co.kr), eActive(www.eactive.co.kr) are participating in the Gooroom Platform Forum.
 
 
 -------------------------------------------------------------------------------
