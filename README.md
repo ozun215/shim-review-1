@@ -89,7 +89,7 @@ Yes, we are using the source from https://github.com/rhboot/shim/releases/downlo
 -------------------------------------------------------------------------------
 ### URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
-https://github.com/ozun215/shim-review-1/tree/gooroom-shim-amd64-20220825
+https://github.com/ozun215/shim-review-1/tree/gooroom-shim-amd64-20220829
 
 
 -------------------------------------------------------------------------------
@@ -132,7 +132,7 @@ We are also following on debian's patches and reflect these patches immediately
 * CVE-2022-28737
 -------------------------------------------------------------------------------
 
-We haven't used shim so far, so there is no such thing. Our gooroom-grub was developed based on GRUB2 2.06 where existing CVEs were resolved.
+We haven't used shim so far, so there is no such thing. Our gooroom-grub was developed based on GRUB2 2.06 which is not affected by the CVEs.
 
 
 
@@ -202,7 +202,7 @@ This is our first shim to receive the signature from MS.
 ### What is the SHA256 hash of your final SHIM binary?
 -------------------------------------------------------------------------------
 
-cfa3cf6ac47e7714622a3f2bbedd00d12b455593e583edb27752becbedb1a55b  shimx64.efi
+cecaac151d3e06a1a70494d4bd66e13dbfa948858af80aaab94719176352f6ec  shimx64.efi
 
 
 -------------------------------------------------------------------------------
@@ -247,8 +247,8 @@ boot part_gpt part_msdos fat ext2 normal configfile lspci ls reboot datetime tim
 -------------------------------------------------------------------------------
 ### What is the origin and full version number of your bootloader (GRUB or other)?
 -------------------------------------------------------------------------------
-https://github.com/gooroom/gooroom-grub, It is derived from the Debian Bullseye upstream 2.06 release with a number of patches applied - see debian/patches there.
-
+https://github.com/gooroom/gooroom-grub, the full version number of our gooroom-grub is 2.06-3+grm3u1.   
+It is derived from the Debian Bullseye upstream 2.06-3 release with a number of patches applied - see debian/patches there.   
 
 
 -------------------------------------------------------------------------------
