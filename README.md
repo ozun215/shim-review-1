@@ -26,7 +26,7 @@ Gooroom platforms are being developed in consideration of cloud-web-based work e
 
 Gooroom platform consists of Gooroom OS, Gooroom browser, Gooroom security technology, and Gooroom central management System
 
-Korean companies such as HANCOM Inc.(www.hancom.com), AhnLab Inc.(www.ahnlab.com), and TmaxOS(kr.tmaxsoft.com), eActive(www.eactive.co.kr) are participating in the Gooroom Platform Forum.
+Korean companies such as HANCOM Inc.(www.hancom.com), AhnLab Inc.(www.ahnlab.com), and TmaxOS(tmaxos.com), eActive(www.eactive.co.kr) are participating in the Gooroom Platform Forum.
 
 
 -------------------------------------------------------------------------------
@@ -249,7 +249,7 @@ boot part_gpt part_msdos fat ext2 normal configfile lspci ls reboot datetime tim
 -------------------------------------------------------------------------------
 ### What is the origin and full version number of your bootloader (GRUB or other)?
 -------------------------------------------------------------------------------
-https://github.com/gooroom/gooroom-grub, the full version number of our gooroom-grub is 2.06-3+grm3u1.   
+https://github.com/gooroom/gooroom-grub, the full version number of our gooroom-grub is 2.06-3+grm3u2.    
 It is derived from the Debian Bullseye upstream 2.06-3 release with a number of patches applied - see debian/patches there.   
 
 
