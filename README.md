@@ -32,19 +32,19 @@ Korean companies such as HANCOM Inc.(www.hancom.com), AhnLab Inc.(www.ahnlab.com
 -------------------------------------------------------------------------------
 ### What product or service is this for?
 -------------------------------------------------------------------------------
-Gooroom OS.
-Gooroom OS. Gooroom OS is a Debian-based Linux distribution, and like other open source OSes, anyone can use the source code and binaries for free.
-Gooroom OS is a secure OS that provides sufficient support for multilevel security. It was created to prepare for the transition to the cloud.
+Gooroom OS.     
+Gooroom OS. Gooroom OS is a Debian-based Linux distribution, and like other open source OSes, anyone can use the source code and binaries for free.    
+Gooroom OS is a secure OS that provides sufficient support for multilevel security. It was created to prepare for the transition to the cloud.     
 
 
 -------------------------------------------------------------------------------
 ### What's the justification that this really does need to be signed for the whole world to be able to boot it?
 -------------------------------------------------------------------------------
-Gooroom OS is an open source OS that anyone can use freely, such as Debian, Ubuntu, and Fedora.
-Gooroom OS has been developed and released up to version 3.0.
-Gooroom OS currently supports Secure Boot
-But, there is no SHIM signed by MS, Secure Boot is only available on PC that could register custom keys in UEFI.
-If we get a shim signed by Microsoft, users around the world will be able to use Gooroom OS more easily and safely.
+Gooroom OS is an open source OS that anyone can use freely, such as Debian, Ubuntu, and Fedora.    
+Gooroom OS has been developed and released up to version 3.0.     
+Gooroom OS currently supports Secure Boot    
+But, there is no SHIM signed by MS, Secure Boot is only available on PC that could register custom keys in UEFI.    
+If we get a shim signed by Microsoft, users around the world will be able to use Gooroom OS more easily and safely.    
 
 
 -------------------------------------------------------------------------------
