@@ -89,7 +89,7 @@ Yes, we are using the source from https://github.com/rhboot/shim/releases/downlo
 -------------------------------------------------------------------------------
 ### URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
-https://github.com/ozun215/shim-review-1/tree/gooroom-shim-amd64-20220830
+https://github.com/ozun215/shim-review-1/tree/gooroom-shim-amd64-20220830-1
 
 
 -------------------------------------------------------------------------------
@@ -188,7 +188,7 @@ Dockerfile is provided to reproduce this build
 This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 -------------------------------------------------------------------------------
 
-https://github.com/ozun215/shim-review-1/tree/gooroom-shim-amd64-20220830/build.log
+https://github.com/ozun215/shim-review-1/tree/gooroom-shim-amd64-20220830-1/build.log
 
 
 -------------------------------------------------------------------------------
@@ -230,7 +230,7 @@ shim.gooroom,1,Gooroom,shim,15.6,https://github.com/gooroom/shim
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md    
 grub,1,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/     
 grub.debian,1,Debian,grub2,2.06-3,https://tracker.debian.org/pkg/grub2     
-grub.gooroom,1,Gooroom,gooroom-grub,2.06-3+grm3u3,https://github.com/gooroom/gooroom-grub     
+grub.gooroom,1,Gooroom,gooroom-grub,2.06-3+grm3u5,https://github.com/gooroom/gooroom-grub     
 
 
 sbat,1,UEFI shim,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md     
@@ -249,7 +249,7 @@ boot part_gpt part_msdos fat ext2 normal configfile lspci ls reboot datetime tim
 -------------------------------------------------------------------------------
 ### What is the origin and full version number of your bootloader (GRUB or other)?
 -------------------------------------------------------------------------------
-https://github.com/gooroom/gooroom-grub, the full version number of our gooroom-grub is 2.06-3+grm3u3.    
+https://github.com/gooroom/gooroom-grub, the full version number of our gooroom-grub is 2.06-3+grm3u5.    
 It is derived from the Debian Bullseye upstream 2.06-3 release with a number of patches applied - see debian/patches there.   
 
 
