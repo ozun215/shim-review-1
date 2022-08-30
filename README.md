@@ -89,7 +89,7 @@ Yes, we are using the source from https://github.com/rhboot/shim/releases/downlo
 -------------------------------------------------------------------------------
 ### URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
-https://github.com/ozun215/shim-review-1/tree/gooroom-shim-amd64-20220830-2
+https://github.com/ozun215/shim-review-1/tree/gooroom-shim-amd64-20220831
 
 
 -------------------------------------------------------------------------------
@@ -188,7 +188,7 @@ Dockerfile is provided to reproduce this build
 This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 -------------------------------------------------------------------------------
 
-https://github.com/ozun215/shim-review-1/tree/gooroom-shim-amd64-20220830-2/build.log
+https://github.com/ozun215/shim-review-1/tree/gooroom-shim-amd64-20220831/build.log
 
 
 -------------------------------------------------------------------------------
@@ -224,15 +224,15 @@ No
 -------------------------------------------------------------------------------
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md    
 shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim    
-shim.gooroom,1,Gooroom,shim,15.6,https://github.com/gooroom/shim    
-
+shim.gooroom,1,Gooroom,shim,15.6+grm3u4,https://github.com/gooroom/shim     
+    
 
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md    
 grub,1,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/     
 grub.debian,1,Debian,grub2,2.06-3,https://tracker.debian.org/pkg/grub2     
 grub.gooroom,1,Gooroom,gooroom-grub,2.06-3+grm3u5,https://github.com/gooroom/gooroom-grub     
-
-
+    
+    
 sbat,1,UEFI shim,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md     
 fwupd,1,Firmware update daemon,fwupd,1.5.7,https://github.com/fwupd/fwupd    
 fwupd.gooroom,1,Gooroom,fwupd,1.5.7-4+grm3u1,https://github.com/gooroom/fwupd      
