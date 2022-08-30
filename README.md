@@ -235,9 +235,9 @@ grub.gooroom,1,Gooroom,gooroom-grub,2.06-3+grm3u3,https://github.com/gooroom/goo
 
 sbat,1,UEFI shim,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md     
 fwupd,1,Firmware update daemon,fwupd,1.5.7,https://github.com/fwupd/fwupd    
-fwupd.debian,1,Debian,fwupd,1.5.7-4,https://tracker.debian.org/pkg/fwupd     
 fwupd.gooroom,1,Gooroom,fwupd,1.5.7-4+grm3u1,https://github.com/gooroom/fwupd      
-
+    
+    
 
 
 -------------------------------------------------------------------------------
