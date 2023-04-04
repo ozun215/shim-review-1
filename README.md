@@ -92,7 +92,7 @@ Yes, we are using the source from https://github.com/rhboot/shim/releases/tag/15
 *******************************************************************************
 ### URL for a repo that contains the exact code which was built to get this binary:
 *******************************************************************************
-[your url here]
+https://github.com/gooroom/shim
 
 *******************************************************************************
 ### What patches are being applied and why:
@@ -188,7 +188,7 @@ Dockerfile is provided to reproduce this build
 ### Which files in this repo are the logs for your build?
 This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 *******************************************************************************
-[your text here]
+https://github.com/ozun215/shim-review-1/blob/15.7-gooroom-3.0/build.log
 
 *******************************************************************************
 ### What changes were made since your SHIM was last signed?
