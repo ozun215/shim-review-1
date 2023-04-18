@@ -137,8 +137,9 @@ We haven't used shim so far, so there is no such thing. Our gooroom-grub was dev
 
 *******************************************************************************
 ### If these fixes have been applied, have you set the global SBAT generation on your GRUB binary to 3?
-*******************************************************************************
-[your text here]
+******************************************************************************* 
+
+ Yes
 
 *******************************************************************************
 ### Were old shims hashes provided to Microsoft for verification and to be added to future DBX updates?
@@ -164,7 +165,9 @@ The kgdb fix is included in debian's current kernel sources, but debian don't en
 *******************************************************************************
 ### Do you build your signed kernel with additional local patches? What do they do?
 *******************************************************************************
-[your text here]
+https://github.com/gooroom/linux/tree/gooroom-3.0/debian/patches/debian
+
+https://github.com/gooroom/linux/tree/gooroom-3.0/debian/patches/gooroom
 
 *******************************************************************************
 ### If you use vendor_db functionality of providing multiple certificates and/or hashes please briefly describe your certificate setup.
@@ -216,11 +219,11 @@ No
 ### Where your code is only slightly modified from an upstream vendor's, please also preserve their SBAT entries to simplify revocation.
 *******************************************************************************
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
-shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim
-shim.gooroom,1,Gooroom,shim,15.6+grm3u4,https://github.com/gooroom/shim
+shim,3,UEFI shim,shim,1,https://github.com/rhboot/shim
+shim.gooroom,1,Gooroom,shim,15.7~deb11u1+grm3u1,https://github.com/gooroom/shim
 
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
-grub,1,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/
+grub,3,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/
 grub.debian,1,Debian,grub2,2.06-3,https://tracker.debian.org/pkg/grub2
 grub.gooroom,1,Gooroom,gooroom-grub,2.06-3+grm3u5,https://github.com/gooroom/gooroom-grub
 
@@ -267,7 +270,7 @@ N/A
 *******************************************************************************
 ### What kernel are you using? Which patches does it includes to enforce Secure Boot?
 *******************************************************************************
-Debian linux kernel(v5.10.120-1)
+Debian linux kernel(v5.10.136-1)
 
 *******************************************************************************
 ### Add any additional information you think we may need to validate this shim.
