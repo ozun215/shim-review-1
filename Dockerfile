@@ -6,7 +6,7 @@ RUN apt-get update -y
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends build-essential git-buildpackage
 RUN git clone https://github.com/ozun215/shim-review-1.git
 WORKDIR /shim-review-1
-RUN git checkout gooroom-3.0
+RUN git checkout 15.7-gooroom-3.0
 WORKDIR /
 RUN git clone https://github.com/gooroom/shim.git
 WORKDIR /shim
