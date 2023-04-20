@@ -231,6 +231,7 @@ sbat,1,UEFI shim,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
 fwupd,1,Firmware update daemon,fwupd,1.5.7,https://github.com/fwupd/fwupd
 fwupd.gooroom,1,Gooroom,fwupd,1.5.7-4+grm3u1,https://github.com/gooroom/fwupd
 
+
 *******************************************************************************
 ### Which modules are built into your signed grub image?
 *******************************************************************************
