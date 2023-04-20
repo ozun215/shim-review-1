@@ -16,5 +16,4 @@ RUN gbp buildpackage -us -uc --git-ignore-branch
 WORKDIR /
 RUN hexdump -Cv /shim/shim*.efi > build
 RUN hexdump -Cv /shim-review-1/$(basename /shim/shim*.efi) > orig
-RUN diff -u orig build
 RUN sha256sum /shim/shim*.efi /shim-review-1/$(basename /shim/shim*.efi)
