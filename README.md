@@ -224,7 +224,7 @@ shim.gooroom,1,Gooroom,shim,15.7~deb11u1+grm3u1,https://github.com/gooroom/shim
 
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
 grub,3,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/
-grub.debian,1,Debian,grub2,2.06-3,https://tracker.debian.org/pkg/grub2
+grub.debian,4,Debian,grub2,2.06-3~deb11u5,https://tracker.debian.org/pkg/grub2
 grub.gooroom,1,Gooroom,gooroom-grub,2.06-3+grm3u5,https://github.com/gooroom/gooroom-grub
 
 sbat,1,UEFI shim,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
