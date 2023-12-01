@@ -61,7 +61,7 @@ You will be asked to post the contents of these mails in your `shim-review` issu
 - Name: JongKyung Woo
 - Position: Gooroom Director
 - Email address: jongkyung.woo@gmail.com
-- PGP key fingerprint: 4D3B 299E 25CB C5C5 7FCB 2801 C52A D23F D5E6 CAE9
+- PGP key fingerprint: E26BB70BCCAD03A97642D44D52AD80DDD37121DB
 
 (Key should be signed by the other security contacts, pushed to a keyserver
 like keyserver.ubuntu.com, and preferably have signatures that are reasonably
@@ -73,7 +73,7 @@ well known in the Linux community.)
 - Name: YoungJun Park
 - Position: Gooroom OS Engineer
 - Email address: zunn@eactive.co.kr
-- PGP key fingerprint: 4D3B 299E 25CB C5C5 7FCB 2801 C52A D23F D5E6 CAE9
+- PGP key fingerprint: 4D3B299E25CBC5C57FCB2801C52AD23FD5E6CAE9
 
 (Key should be signed by the other security contacts, pushed to a keyserver
 like keyserver.ubuntu.com, and preferably have signatures that are reasonably
