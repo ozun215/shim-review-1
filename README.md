@@ -97,7 +97,35 @@ https://github.com/gooroom/shim
 *******************************************************************************
 ### What patches are being applied and why:
 *******************************************************************************
-No patch applied
+- [block-grub-sbat3-debian.patch](https://github.com/gooroom/shim/blob/gooroom-3.0/debian/patches/block-grub-sbat3-debian.patch)
+
+Debian's grub.3 update was broken - some binaries included the SBAT data update but not the security patches.
+
+This patch denies loading binaries with `grub.debian,3`.
+
+- [aarch64-shim-old.patch](https://github.com/gooroom/shim/blob/gooroom-3.0/debian/patches/aarch64-shim-old.patch)
+
+shim 15.6 onwards needs newer binutils to build on aarch64. That works
+better, but we don't have that binutils update in older Debian
+releases. Undo the build changes here so that we can build for aarch64
+on older stable releases. We're not going to sign them, but we need
+the binaries for aarch64.
+
+- [aarch64-gnuefi-old.patch](https://github.com/gooroom/shim/blob/gooroom-3.0/debian/patches/aarch64-gnuefi-old.patch)
+
+The same reason as above.
+
+- [Make-sbat_var.S-parse-right-with-buggy-gcc-binutils.patch](https://github.com/gooroom/shim/blob/gooroom-3.0/debian/patches/Make-sbat_var.S-parse-right-with-buggy-gcc-binutils.patch)
+
+In https://github.com/rhboot/shim/issues/533 , iokomin noticed that
+gas in binutils before 2.36 appears to be incorrectly concatenating
+string literals in '.asciz' directives, including an extra NUL character
+in between the strings, and this will cause us to incorrectly parse the 
+.sbatlevel section in shim binaries.
+
+This patch adds test cases that will cause the build to fail if this has 
+happened, as well as changing sbat_var.S to to use '.ascii' and '.byte'
+to construct the data, rather than using '.asciz'.
 
 *******************************************************************************
 ### If shim is loading GRUB2 bootloader what exact implementation of Secureboot in GRUB2 do you have? (Either Upstream GRUB2 shim_lock verifier or Downstream RHEL/Fedora/Debian/Canonical-like implementation)
@@ -136,10 +164,10 @@ We have our own downstream implementation. We are also following on debian's pat
 We haven't used shim so far, so there is no such thing. Our gooroom-grub was developed based on GRUB2 2.06 which is not affected by the CVEs.
 
 *******************************************************************************
-### If these fixes have been applied, have you set the global SBAT generation on your GRUB binary to 3?
-******************************************************************************* 
-
- Yes
+### If these fixes have been applied, is the upstream global SBAT generation in your GRUB2 binary set to 4?
+The entry should look similar to: `grub,4,Free Software Foundation,grub,GRUB_UPSTREAM_VERSION,https://www.gnu.org/software/grub/`
+*******************************************************************************
+Yes
 
 *******************************************************************************
 ### Were old shims hashes provided to Microsoft for verification and to be added to future DBX updates?
@@ -223,7 +251,7 @@ shim,3,UEFI shim,shim,1,https://github.com/rhboot/shim
 shim.gooroom,1,Gooroom,shim,15.7~deb11u1+grm3u1,https://github.com/gooroom/shim   
 
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md   
-grub,3,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/   
+grub,4,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/   
 grub.debian,4,Debian,grub2,2.06-3~deb11u5,https://tracker.debian.org/pkg/grub2   
 grub.gooroom,1,Gooroom,gooroom-grub,2.06-3+grm3u5,https://github.com/gooroom/gooroom-grub   
 
